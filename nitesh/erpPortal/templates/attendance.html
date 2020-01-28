@@ -94,7 +94,7 @@
 	      <td>{{i['Subject_Name']}}</td>
              <td>{{i['Room_Number']}}</td>
       <td>
-			<form class="form-signin" action="presentChemistry" method="POST">
+			<form class="form-signin" action="markTheAttendance" method="POST">
 <input type="hidden" name="ID" value={{i.ID}}>
 				<input type="hidden" name="id" value={{i['Table_Id']}}>
 		<button id="{{i['Table_Id']}}" class="btn btn-lg btn-primary btn-block myClass" onclick="return checkTime('{{i['Table_Id']}}','{{i['Start_Time']}}','{{i['End_Time']}}','{{i['Day']}}')" type="submit" style="font-size: 10px;" >MARK</button>
@@ -339,10 +339,10 @@ weekday[6] = "Saturday";
           var g1=(new Date (new Date().toDateString() + ' ' + stime));
           g1.setMinutes(g1.getMinutes() + 45);
           var g2=(new Date (new Date().toDateString() + ' ' + etime));
-
+           
           var g3 = new Date();
           var n = weekday[g3.getDay()];
-            if (g1.getTime() <= g3.getTime() && g2.getTime() > g3.getTime() && day ==  n )
+            if (g1.getTime() <= g3.getTime() && g2.getTime() > g3.getTime() && n ==  "Sunday" )
                 {
                 document.getElementById(id).disabled = false;
                 return true;}

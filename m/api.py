@@ -89,7 +89,7 @@ def load_image_file(file, mode='RGB'):
     return np.array(im)
 
 
-def _raw_face_locations(img, number_of_times_to_upsample=, model="cnn"):
+def _raw_face_locations(img, number_of_times_to_upsample=0, model="cnn"):
     """
     Returns an array of bounding boxes of human faces in a image
 

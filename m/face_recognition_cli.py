@@ -9,6 +9,7 @@ import itertools
 import sys
 import PIL.Image
 import numpy as np
+# print('Hello World')
 
 global_name_list=[]
 def scan_known_people(known_people_folder):
@@ -104,13 +105,14 @@ def process_images_in_process_pool(images_to_check, known_names, known_face_enco
 # @click.option('--tolerance', default=0.6, help='Tolerance for face comparisons. Default is 0.6. Lower this if you get multiple matches for the same person.')
 # @click.option('--show-distance', default=False, type=bool, help='Output face distance. Useful for tweaking tolerance setting.')
 def main():
+    print("hello")
     cpus=1
     tolerance=0.5
     show_distance=False
     known_people_folder='/root/Desktop/tyrant/known'
     image_to_check='/root/Desktop/tyrant/a.jpg'
     known_names, known_face_encodings = scan_known_people(known_people_folder)
-
+    print("hello1")
     # Multi-core processing only supported on Python 3.4 or greater
     if (sys.version_info < (3, 4)) and cpus != 1:
         click.echo("WARNING: Multi-processing support requires Python 3.4 or greater. Falling back to single-threaded processing!")
@@ -127,5 +129,5 @@ def main():
     print(global_name_list)
 
 
-if __name__ == "__main__":
-    main()
+
+main()
